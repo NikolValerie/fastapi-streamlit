@@ -12,5 +12,5 @@ Then run:
 docker run -d --name api-container -p 80:80 fastapi
 ```
 
-Streamlit app can be run locally or from streamlit [platform](https://streamlit.io/). 
+Streamlit app can be run locally or on streamlit [platform](https://streamlit.io/). 
 
