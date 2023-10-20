@@ -10,8 +10,6 @@ COPY ./main.py /code/main.py
 
 EXPOSE 8501
 
-HEALTHCHECK CMD curl --fail http://localhost:80/_stcore/health
-
 ENTRYPOINT ["streamlit", "run"]
 
 CMD ["main.py"]
