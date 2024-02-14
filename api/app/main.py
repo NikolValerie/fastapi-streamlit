@@ -11,6 +11,9 @@ app = FastAPI()
 class ImageClass(BaseModel):
     prediction: str
 
+class TextClass(BaseModel):
+    text: str
+
 # Load model at startup
 @app.on_event("startup")
 def startup_event():
@@ -31,5 +34,14 @@ def classify(file: UploadFile = File(...)):
     response = ImageClass(
         prediction=imagenet_class
     )
-
     return response
+
+@app.post('/clf_text')
+def clf_text(data: TextClass):
+    print(data.text)
+    return data
+
+
+
+##### run from api folder:
+##### uvicorn app.main:app
