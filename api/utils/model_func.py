@@ -10,7 +10,7 @@ def load_classes():
     '''
     Returns IMAGENET classes
     '''
-    with open('utils/imagenet-simple-labels.json') as f:
+    with open('/home/user/fastapi-streamlit/api/utils/imagenet-simple-labels.json') as f:
         labels = json.load(f)
     return labels
 
@@ -28,7 +28,7 @@ def load_model():
     Returns resnet model with IMAGENET weights
     '''
     model = resnet18()
-    model.load_state_dict(torch.load('utils/resnet18-weights.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('/home/user/fastapi-streamlit/api/utils/resnet18-weights.pth', map_location='cpu'))
     model.eval()
     return model
 
